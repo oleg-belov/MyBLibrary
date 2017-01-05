@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns="http://java.sun.com/xml/ns/javaee" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
+  <display-name>Archetype Created Web Application</display-name>
+  
+  <!-- CaregoryMenuFilter -->
+  <filter>
+    <filter-name>caregoryMenuFilter</filter-name>
+    <filter-class>md.blibrary.app.filters.CaregoryMenuFilter</filter-class>
+  </filter>
+  <filter-mapping>
+    <filter-name>caregoryMenuFilter</filter-name>
+    <servlet-name>homePageControler</servlet-name>
+    <servlet-name>categoryPageControler</servlet-name>
+    <servlet-name>bookPageControler</servlet-name>
+    <servlet-name>authorPageControler</servlet-name>
+    <servlet-name>searchPageControler</servlet-name>
+  </filter-mapping>
+ 
+  <!-- HomePageControler -->
+  <servlet>
+    <servlet-name>homePageControler</servlet-name>
+    <servlet-class>md.blibrary.app.controller.HomePageControler</servlet-class>
+    <load-on-startup>1</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>homePageControler</servlet-name>
+    <url-pattern>/home.do</url-pattern>
+  </servlet-mapping>
+  
+  <!-- CategoryPageControler -->
+  <servlet>
+    <servlet-name>categoryPageControler</servlet-name>
+    <servlet-class>md.blibrary.app.controller.CategoryPageControler</servlet-class>
+    <load-on-startup>2</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>categoryPageControler</servlet-name>
+    <url-pattern>/category.do</url-pattern>
+  </servlet-mapping>
+  
+   <!-- BookPageControler -->
+  <servlet>
+    <servlet-name>bookPageControler</servlet-name>
+    <servlet-class>md.blibrary.app.controller.BookPageControler</servlet-class>
+    <load-on-startup>3</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>bookPageControler</servlet-name>
+    <url-pattern>/book.do</url-pattern>
+  </servlet-mapping>
+  
+  <!-- AuthorPageControler -->
+  <servlet>
+    <servlet-name>authorPageControler</servlet-name>
+    <servlet-class>md.blibrary.app.controller.AuthorPageControler</servlet-class>
+    <load-on-startup>4</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>authorPageControler</servlet-name>
+    <url-pattern>/author.do</url-pattern>
+  </servlet-mapping>
+  
+  <!-- SearchPageControler -->
+  <servlet>
+    <servlet-name>searchPageControler</servlet-name>
+    <servlet-class>md.blibrary.app.controller.SearchPageControler</servlet-class>
+    <load-on-startup>5</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>searchPageControler</servlet-name>
+    <url-pattern>/search.do</url-pattern>
+  </servlet-mapping>
+  
+   <!-- BookImageControler -->
+  <servlet>
+    <servlet-name>bookImageControler</servlet-name>
+    <servlet-class>md.blibrary.app.controller.BookImageControler</servlet-class>
+    <load-on-startup>6</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>bookImageControler</servlet-name>
+    <url-pattern>/bookimage.do</url-pattern>
+  </servlet-mapping>
+  
+  <!-- AuthorImageControler -->
+  <servlet>
+    <servlet-name>authorImageControler</servlet-name>
+    <servlet-class>md.blibrary.app.controller.AuthorImageControler</servlet-class>
+    <load-on-startup>7</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>authorImageControler</servlet-name>
+    <url-pattern>/authorimage.do</url-pattern>
+  </servlet-mapping>
+  
+  <!-- PdfControler -->
+   <servlet>
+    <servlet-name>pdfControler</servlet-name>
+    <servlet-class>md.blibrary.app.controller.PdfControler</servlet-class>
+	<load-on-startup>8</load-on-startup>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>pdfControler</servlet-name>
+    <url-pattern>/pdf.do</url-pattern>
+  </servlet-mapping>
+  
+  <!-- welcome file -->
+  <welcome-file-list>
+    <welcome-file>index.jsp</welcome-file>
+  </welcome-file-list>
+  
+  <!-- Error Page -->
+   <error-page>
+    <error-code>404</error-code>
+    <location>/error404.html</location>
+  </error-page>
+  
+   <!--  DB Pool --> 
+ <resource-ref>
+  <description>DB Connection</description> 
+  <res-ref-name>jdbc/postgres</res-ref-name> 
+  <res-type>javax.sql.DataSource</res-type> 
+  <res-auth>Container</res-auth> 
+  </resource-ref>
+
+</web-app>
