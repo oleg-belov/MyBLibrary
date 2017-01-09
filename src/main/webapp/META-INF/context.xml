@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Context antiJARLoking="true" path="/blibrary">
+ 
+  <Resource name="jdbc/postgres"  
+          auth="Container"
+          type="javax.sql.DataSource"
+          maxActive="100"
+          minIdle="5"
+          maxWait="100"
+          initialSize="5"
+          removeAbandonedTimeout="60"
+          removeAbandoned="true"
+          logAbandoned="true"
+          minEvictableIdleTimeMillis="300"
+          jmxEnabled="true"
+          username="god"
+          password="admin228"
+          driverClassName="org.postgresql.Driver"
+          url="jdbc:postgresql://localhost:5432/blibrary"/>
+ 
+</Context>
